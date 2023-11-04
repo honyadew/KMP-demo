@@ -15,10 +15,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.honya.domain.usecase.CountOne
+import com.honya.domain.usecase.CountOneHundred
+import com.honya.domain.usecase.CountTen
 
 @Composable
 fun StartPoint(){
     var counter by remember { mutableStateOf(0) }
+
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -27,13 +31,13 @@ fun StartPoint(){
             Text(text = "counter = $counter")
         }
         Row {
-            Button(onClick = {counter+=1}){
+            Button(onClick = {counter+=CountOne().invoke()}){
                 Text(text = "+1")
             }
-            Button(onClick = {counter+=10}){
+            Button(onClick = {counter+=CountTen().invoke()}){
                 Text(text = "+10")
             }
-            Button(onClick = {counter+=100}){
+            Button(onClick = {counter+=CountOneHundred().invoke()}){
                 Text(text = "+100")
             }
         }

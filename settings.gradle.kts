@@ -31,3 +31,4 @@ rootProject.name = "KMP-demo"
 include(":androidApp")
 include(":shared")
 include(":desktopApp")
+include(":core:domain")

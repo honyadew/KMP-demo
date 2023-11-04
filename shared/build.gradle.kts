@@ -22,6 +22,8 @@ kotlin {
                 api(compose.ui)
                 api(compose.foundation)
                 api(compose.material3)
+                implementation(project(":core:domain"))
+
             }
         }
         val androidMain by getting {
@@ -29,6 +31,7 @@ kotlin {
 //                api("androidx.activity:activity-compose:1.7.2")
 //                api("androidx.appcompat:appcompat:1.6.1")
 //                api("androidx.core:core-ktx:1.10.1")
+
             }
         }
         val desktopMain by getting {
